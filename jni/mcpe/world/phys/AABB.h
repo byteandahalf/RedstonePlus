@@ -1,12 +1,10 @@
 #pragma once
-
 #include "Vec3.h"
 
-class AABB {
-public:
-	int empty;
+struct AABB {
 	Vec3 min;
 	Vec3 max;
+	bool empty;
 
 	AABB();
 	AABB(const Vec3&, const Vec3&);
