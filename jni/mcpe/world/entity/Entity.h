@@ -8,7 +8,7 @@ class Material;
 class Player;
 class EntityPos;
 class BlockPos;
-class MaterialType;
+class ArmorSlot;
 struct Vec2;
 class CompoundTag;
 class EntityLink;
@@ -19,6 +19,7 @@ class DimensionId;
 class ChangeDimensionPacket;
 struct AABB;
 #include "../phys/Vec3.h"
+#include "../material/MaterialType.h"
 
 class Entity {
 public:

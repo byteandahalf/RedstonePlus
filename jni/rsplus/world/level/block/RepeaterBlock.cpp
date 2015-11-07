@@ -51,7 +51,7 @@ int RepeaterBlock::getResource(Random&, int, int) {
 }
 
 bool RepeaterBlock::canSurvive(BlockSource& region, const BlockPos& pos) {
-	return Block::mSolid[region.getBlockID(x, y - 1, z).id] || region.isRedstonePlacementException(x, y - 1, z);
+	return Block::mSolid[region.getBlockID({pos.x, pos.y - 1, pos.z}).id];// || region.isRedstonePlacementException(x, y - 1, z);
 }
 
 bool RepeaterBlock::mayPlace(BlockSource& region, const BlockPos& pos) {

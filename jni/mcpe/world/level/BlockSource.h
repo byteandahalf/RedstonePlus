@@ -1,10 +1,9 @@
 #pragma once
-struct BlockID;
-struct DataID;
 class Block;
 class Dimension;
 struct BlockPos;
-class EntityList;
+class BlockEntity;
+#include "../../CommonTypes.h"
 #include "../entity/Entity.h"
 #include "BlockTickingQueue.h"
 
@@ -26,5 +25,5 @@ public:
 	Dimension* getDimension();
 	BlockTickingQueue* getTickQueue(const BlockPos&);
 
-	void sheduleBlockUpdate(const BlockPos&, int, int);
+	void scheduleBlockUpdate(const BlockPos&, int, int);
 };
