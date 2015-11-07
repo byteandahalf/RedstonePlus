@@ -3,19 +3,19 @@
 #include <vector>
 class Material;
 class BlockEntity;
-class BlockPos;
+struct BlockPos;
 class BlockSource;
 class Entity;
 class ItemInstance;
 class Player;
 class Mob;
 class Random;
-class Vec3;
+struct Vec3;
 class Brightness;
 class CreativeItemCategory;
 #include "../../../client/renderer/texture/TextureUVCoordinateSet.h"
 #include "../../phys/AABB.h"
-//#include "../../../CommonTypes.h"
+#include "../../../CommonTypes.h"
 #include "mcpe/world/level/block/entity/BlockEntityType.h"
 
 class Block {
@@ -40,7 +40,7 @@ public:
 	};
 
 
-	signed char blockId; // 4
+	BlockID blockId; // 4
 	unsigned int textureIsotropic; // 8
 	std::string name; // 12
 	TextureUVCoordinateSet texture; // 16
@@ -88,7 +88,6 @@ public:
 	static const Block::SoundType SOUND_STONE;
 	static const Block::SoundType SOUND_WOOD;
 
-
 	Block(const std::string&, int, const Material&);
 	Block(const std::string&, int, TextureUVCoordinateSet, const Material&);
 	Block(const std::string&, int, const std::string&, const Material&);
@@ -114,6 +113,7 @@ public:
 	virtual bool isCraftingBlock() const;
 	virtual bool isInteractiveBlock() const;
 	virtual bool isWaterBlocking() const;
+	virtual bool isDoorBlock() const;
 	virtual bool isRedstoneBlock() const;
 	virtual bool isRedstoneAttachable() const;
 	virtual bool waterSpreadCausesSpawn() const;

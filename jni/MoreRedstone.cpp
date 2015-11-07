@@ -10,13 +10,16 @@
 
 #include "rsplus/world/level/block/RepeaterBlock.h"
 
+void initBlockItems() {
+	Item::mItems[93] = new BlockItem("diode", 93 - 0x100);
+}
 
 void (*_Block$initBlocks)();
 void Block$initBlocks() {
 	_Block$initBlocks();
 	
 	RepeaterBlock* repeater_off = new RepeaterBlock(93, "repeater_off", false);
-	Item::mItems[93] = new BlockItem("diode", 93 - 256);
+	initBlockItems();
 }
 
 void (*_Item$initCreativeItems)();
