@@ -1,0 +1,6 @@
+#include "mcpe/world/level/Dimension.h"
+#include "mcpe/world/level/circuit/CircuitSystem.h"
+#include "mcpe/world/level/circuit/BaseCircuitComponent.h"
+#include "mcpe/world/level/circuit/ProducerComponent.h"
+#include "mcpe/world/level/circuit/ConsumerComponent.h"
+#include "mcpe/world/level/circuit/CapacitorComponent.h"

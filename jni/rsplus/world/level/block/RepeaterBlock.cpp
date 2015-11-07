@@ -118,7 +118,7 @@ void RepeaterBlock::onPlace(BlockSource& region, const BlockPos& pos) {
 
 void RepeaterBlock::onLoaded(BlockSource& region, const BlockPos& pos) {
 	//if(region.getLevel()->isClientSide()) {
-		//region.getDimension()->getCircuitSystem()->createComponent(pos, , std::unique_ptr<BaseCircuitComponent>(new ProducerComponent());
+		region.getDimension()->getCircuitSystem()->createComponent(pos, 0, std::unique_ptr<BaseCircuitComponent>(new CapacitorComponent()));
 	//}
 }
 
@@ -152,5 +152,9 @@ void RepeaterBlock::animateTick(BlockSource& region, const BlockPos& pos, Random
 }
 
 void RepeaterBlock::onRedstoneUpdate(BlockSource& region, const BlockPos& pos, int strength, bool idk) {
-
+	region.getDimension()->getCircuitSystem()->lockGraph(true);
+	if(strength > 0) {
+		region.removeBlock(pos);
+	}
+	region.getDimension()->getCircuitSystem()->lockGraph(false);
 }
